@@ -6,7 +6,7 @@ const ViewDetails = () => {
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [editMode, setEditMode] = useState(false);
 
-  /* ================= FETCH STUDENTS ================= */
+  
   useEffect(() => {
     fetchStudents();
   }, []);
@@ -20,7 +20,7 @@ const ViewDetails = () => {
     }
   };
 
-  /* ================= HANDLE CHANGE (FIXED) ================= */
+  
   const handleChange = (section, field, value) => {
     if (section) {
       setSelectedStudent((prev) => ({
@@ -38,7 +38,7 @@ const ViewDetails = () => {
     }
   };
 
-  /* ================= UPDATE ================= */
+  
   const handleUpdate = async () => {
     try {
       console.log("Updating:", selectedStudent);
@@ -59,7 +59,7 @@ const ViewDetails = () => {
     }
   };
 
-  /* ================= DELETE ================= */
+  
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this student?")) return;
 
@@ -71,7 +71,7 @@ const ViewDetails = () => {
     }
   };
 
-  /* ================= LIST VIEW ================= */
+  
   if (!selectedStudent) {
     return (
       <div className="max-w-6xl mx-auto p-6">
@@ -116,12 +116,12 @@ const ViewDetails = () => {
     );
   }
 
-  /* ================= DETAILS VIEW ================= */
+  
   return (
     <div className="max-w-xl mx-auto p-6">
       <h2 className="text-xl font-bold mb-4">Student Details</h2>
 
-      {/* BASIC */}
+      
       {["firstName", "lastName", "dateOfBirth", "placeOfBirth", "nationality","citizenshipNumber","citizenshipIssueDate","citizenshipIssueDistrict","email","alternativeEmail","phoneNumber","secondaryPhoneNumber","emergencyContactNumber","gender","bloodGroup","maritalStatus","religion","ethnicity","disability"].map(
         (field) => (
           <div key={field} className="mb-3">
@@ -142,7 +142,7 @@ const ViewDetails = () => {
         )
       )}
 
-      {/* ADDRESS (NESTED) */}
+      
       <h3 className="font-bold mt-6 mb-2">Address</h3>
 
       {["province", "municipality", "tole","addressType"].map((field) => (
@@ -163,7 +163,7 @@ const ViewDetails = () => {
         </div>
       ))}
 
-      {/* Parent (NESTED) */}
+      
       <h3 className="font-bold mt-6 mb-2">parentdetails</h3>
 
       {["fatherName", "fatherOccupation", "fatherPhoneNumber","motherName","motherOccupation","motherPhoneNumber","guardianName","guardianOccupation","guardianPhoneNumber"].map((field) => (
@@ -184,7 +184,7 @@ const ViewDetails = () => {
         </div>
       ))}
 
-      {/* Academic details (NESTED) */}
+      
       <h3 className="font-bold mt-6 mb-2">academicdetails</h3>
 
       {["previousGrade", "yearOfCompletion", "percentage","programeType","subjectType"].map((field) => (
@@ -205,7 +205,7 @@ const ViewDetails = () => {
         </div>
       ))}
 
-      {/* financialdetails (NESTED) */}
+      
       <h3 className="font-bold mt-6 mb-2">financialdetails</h3>
 
       {["scholarshipType", "feeCategory"].map((field) => (
@@ -226,7 +226,7 @@ const ViewDetails = () => {
         </div>
       ))}
 
-      {/* extraCurricular (NESTED) */}
+      
       <h3 className="font-bold mt-6 mb-2">extraCurricular</h3>
 
       {["interest", "timeSlot", "transportationMethod"].map((field) => (
@@ -247,7 +247,7 @@ const ViewDetails = () => {
         </div>
       ))}
 
-      {/* BUTTONS */}
+      
       <div className="flex gap-3 mt-6">
         {!editMode ? (
           <button
