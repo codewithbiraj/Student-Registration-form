@@ -175,7 +175,7 @@ const StudentForm = () => {
   return (
     <form onSubmit={handleSubmit} className='max-w-6xl mx-auto p-6 space-y-6'>
 
-      {/* BASIC INFO */}
+      
       <div className='border p-4 rounded'>
         <h2 className='font-semibold mb-3'>Basic Information</h2>
 
