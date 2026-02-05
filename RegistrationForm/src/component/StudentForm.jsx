@@ -75,7 +75,7 @@ const StudentForm = () => {
     getStudentsData();
   }, []);
 
-  /* ================= HELPERS ================= */
+  
   const onlyString = (value) => value.replace(/[^a-zA-Z\s]/g, '');
   const onlyNumber = (value, max = 10) =>
     value.replace(/\D/g, '').slice(0, max);
@@ -95,7 +95,7 @@ const StudentForm = () => {
     console.log(student)
   };
 
-  /* ================= VALIDATION ================= */
+  
   const validateForm = () => {
     let temp = {};
 
@@ -142,7 +142,7 @@ const StudentForm = () => {
     try {
       const response = await axios.post(
         'http://localhost:5135/api/Student',
-        student, // ✅ this is your data
+        student, 
         {
           headers: {
             'Content-Type': 'application/json',
@@ -171,11 +171,11 @@ const StudentForm = () => {
 
 
 
-  /* ================= UI ================= */
+  
   return (
     <form onSubmit={handleSubmit} className='max-w-6xl mx-auto p-6 space-y-6'>
 
-      {/* BASIC INFO */}
+      
       <div className='border p-4 rounded'>
         <h2 className='font-semibold mb-3'>Basic Information</h2>
 
@@ -240,7 +240,7 @@ const StudentForm = () => {
         <input className="border p-2 w-full mt-2" placeholder="Disability" onChange={e=>handleChange(null,"disability",e.target.value)} />
       </div>
 
-      {/* ADDRESS */}
+      
       <div className="border p-4 rounded">
   <h2 className="font-semibold mb-3">Address</h2>
 
@@ -278,7 +278,7 @@ const StudentForm = () => {
   </select>
 </div>
 
-      {/* PARENT DETAILS */}
+      
       <div className='border p-4 rounded'>
         <h2 className=' font-semibold mb-3'>Parent / Guardian Details</h2>
         
@@ -297,7 +297,7 @@ const StudentForm = () => {
           
       </div>
 
-      {/* ACADEMIC */}
+      
       <div className="border p-4 rounded">
         <h2 className="font-semibold mb-3">Academic</h2>
         <input
@@ -322,7 +322,7 @@ const StudentForm = () => {
 
       </div>
 
-      {/* FINANCIAL */}
+      
       <div className='border p-4 rounded'>
         <h2 className='font-semibold mb-3'>Financial</h2>
         <select className="border p-2 w-full mt-2" onChange={e=>handleChange("financialdetails","scholarshipType",e.target.value)}>
@@ -343,7 +343,7 @@ const StudentForm = () => {
         {errors.feeCategory && <p className="text-red-500 text-sm">{errors.feeCategory}</p>}
       </div>
 
-       {/* extracuricular */}
+       
        <div className="border p-4 rounded-lg">
         <h2 className="text-xl font-semibold mb-4">Extra Curricular Activities</h2>
         <div className='grid grid-cols-3 gap-4'>
