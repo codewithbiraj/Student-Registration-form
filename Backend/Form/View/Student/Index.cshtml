@@ -1,0 +1,217 @@
+﻿@model Form.Dto.StudentDto
+@using Form.helper.enums
+
+@{
+    ViewData["Title"] = "Student Registration";
+
+    // student details
+
+    <h2>Student Registration Form</h2>
+
+<form> asp-action="Create" method="post" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Basic Information</legend>
+
+        <div class="grid">
+            <div>
+                <label>First Name</label>
+                    <input asp-for="FirstName" />
+            </div>
+
+            <div>
+                <label>Last Name</label>
+                <input asp-for="LastName" />
+            </div>
+
+            <div>
+                <label>Date of Birth</label>
+                <input asp-for="DateOfBirth" type="date" />
+            </div>
+
+            <div>
+                <label>Gender</label>
+                <input asp-for="Gender" />
+            </div>
+
+            <div>
+                <label>Email</label>
+                <input asp-for="Email" />
+            </div>
+
+            <div>
+                <label>Phone Number</label>
+                <input asp-for="PhoneNumber" />
+            </div>
+        </div>
+    </fieldset>
+
+    </form>
+    //address details
+
+    <fieldset>
+        <legend>Address Details</legend>
+
+        <div class="grid">
+            <div>
+                <label>Province</label>
+                <input asp-for="Address.Province" />
+            </div>
+
+            <div>
+                <label>Municipality</label>
+                <input asp-for="Address.Municipality" />
+            </div>
+
+            <div>
+                <label>Ward Number</label>
+                <input asp-for="Address.WardNumber" />
+            </div>
+
+            <div>
+                <label>Tole</label>
+                <input asp-for="Address.Tole" />
+            </div>
+
+            <div>
+                <label>Address Type</label>
+                <select asp-for="Address.AddressType"
+                        asp-items="Html.GetEnumSelectList<AddressType>()">
+                    <option value="">Select Address Type</option>
+                </select>
+            </div>
+        </div>
+    
+    
+    
+    
+    
+    
+    </fieldset>
+
+    <fieldset>
+        <legend>Parent Details</legend>
+
+        <div class="grid">
+            <div>
+                <label>Father Name</label>
+                <input asp-for="Parentdetails.FatherName" />
+            </div>
+
+            <div>
+                <label>Father Occupation</label>
+                <input asp-for="Parentdetails.FatherOccupation" />
+            </div>
+
+            <div>
+                <label>Father Phone</label>
+                <input asp-for="Parentdetails.FatherPhoneNumber" />
+            </div>
+
+            <div>
+                <label>Mother Name</label>
+                <input asp-for="Parentdetails.MotherName" />
+            </div>
+
+            <div>
+                <label>Mother Phone</label>
+                <input asp-for="Parentdetails.MotherPhoneNumber" />
+            </div>
+        </div>
+    </fieldset>
+// academoc details
+    <fieldset>
+        <legend>Academic Details</legend>
+
+        <div class="grid">
+            <div>
+                <label>Previous School</label>
+                <input asp-for="Academicdetail.PreviousSchool" />
+            </div>
+
+            <div>
+                <label>Previous Grade</label>
+                <input asp-for="Academicdetail.PreviousGrade" />
+            </div>
+
+            <div>
+                <label>Program Type</label>
+                <select asp-for="Academicdetail.programeType"
+                        asp-items="Html.GetEnumSelectList<ProgrameType>()">
+                    <option value="">Select Program</option>
+                </select>
+            </div>
+
+            <div>
+                <label>Subject Type</label>
+                <select asp-for="Academicdetail.subjectType"
+                        asp-items="Html.GetEnumSelectList<SubjectType>()">
+                    <option value="">Select Subject</option>
+                </select>
+            </div>
+        </div>
+    </fieldset>
+//financial details
+    <fieldset>
+        <legend>Financial Details</legend>
+
+        <div class="grid">
+            <div>
+                <label>Scholarship Type</label>
+                <select asp-for="Financialdetails.scholarshipType"
+                        asp-items="Html.GetEnumSelectList<ScholarshipType>()">
+                </select>
+            </div>
+
+            <div>
+                <label>Fee Category</label>
+                <select asp-for="Financialdetails.feeCategory"
+                        asp-items="Html.GetEnumSelectList<feeCategory>()">
+                </select>
+            </div>
+        </div>
+    <button type="submit">Submit</button>
+
+    </fieldset>
+
+    //extracurcuilar
+
+    <fieldset>
+        <legend>Extra Curricular</legend>
+
+        <div class="grid">
+            <div>
+                <label>Interest</label>
+                <select asp-for="ExtraCurricular.Interest"
+                        asp-items="Html.GetEnumSelectList<Interest>()">
+                </select>
+            </div>
+
+            <div>
+                <label>Time Slot</label>
+                <select asp-for="ExtraCurricular.timeSlot"
+                        asp-items="Html.GetEnumSelectList<TimeSlot>()">
+                </select>
+            </div>
+
+            <div>
+                <label>Transportation</label>
+                <select asp-for="ExtraCurricular.transportationMethod"
+                        asp-items="Html.GetEnumSelectList<TransportationMethod>()">
+                </select>
+            </div>
+        </div>
+    </fieldset>
+    //submit button
+        <button type="submit" class="btn-submit">
+        Submit Student
+    </button>
+
+
+
+
+
+
+}
+<link rel="stylesheet" href="~/css/Student.css" />

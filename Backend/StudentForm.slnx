@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Form/Form.csproj" />
+  <Project Path="WebUI/WebUI.csproj" Id="781b4b3f-4fdc-4f36-a830-aebe4f4eb1f8" />
+</Solution>

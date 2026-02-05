@@ -1,0 +1,5 @@
+wwwroot\css\Student.css
+wwwroot\uploads\academic\photos\3efc0252-f1d0-4b22-a4c6-207b22923cd1.jpg
+wwwroot\uploads\academic\photos\3f6f2ff8-1869-4749-9c9d-744991d126dd.jpg
+wwwroot\uploads\academic\photos\d1779c15-762c-401c-bfe6-8adcb2d6f4d8.jpg
+wwwroot\uploads\academic\photos\d7a81fd9-f49e-4b10-ad90-51acf3aba358.jpg
